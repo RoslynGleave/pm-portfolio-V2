@@ -9,8 +9,60 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=20260207h">
+<style>
+.cs-page-project .cs-tag {
+  background: #000000;
+  border-color: #000000;
+  color: #00f5ff;
+}
+
+.cs-page-project .cs-tag:hover,
+.cs-page-project .cs-tag:focus-visible {
+  background: #000000;
+  border-color: #000000;
+  color: #00f5ff;
+}
+
+.cs-page-project .cs-title {
+  color: #000000;
+}
+
+.cs-page-project .cs-metric {
+  background: #000000;
+  border-color: rgba(0, 245, 255, 0.34);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+.cs-page-project .cs-metric-value {
+  color: #00f5ff;
+}
+
+.cs-page-project .cs-metric-label {
+  color: #ffffff;
+}
+
+.cs-page-project .cs-badge {
+  background: #000000;
+  color: #00f5ff;
+  border: 1px solid #000000;
+}
+
+.cs-page-project .cs-section {
+  max-width: calc(100% - 30mm);
+}
+
+.cs-page-project .cs-section-title {
+  font-size: 0.917rem;
+}
+
+@media (max-width: 640px) {
+  .cs-page-project .cs-section {
+    max-width: 100%;
+  }
+}
+</style>
 </head>
-<body class="cs-page">
+<body class="cs-page cs-page-project">
 
 <nav class="nav">
   <div class="nav-inner">
@@ -20,7 +72,7 @@
     </button>
     <ul class="nav-links">
       <li><a href="../index.html#capabilities">Capabilities</a></li>
-      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../index.html#work">Projects</a></li>
       <li><a href="../index.html#about">About</a></li>
       <li><a href="../index.html#contact" class="nav-cta">Get in Touch</a></li>
     </ul>
@@ -29,7 +81,7 @@
 
 <div class="cs-content-wrap">
   <div class="container">
-    <a href="../index.html#work" class="cs-back"><span>&larr;</span> Back to Work</a>
+    <a href="../index.html#work" class="cs-back"><span>&larr;</span> Back to Projects</a>
 
     <div class="cs-hero">
       <p class="cs-tag">Transformation</p>
@@ -39,15 +91,15 @@
 
     <div class="cs-metrics">
       <div class="cs-metric">
-        <span class="cs-metric-value">80%</span>
+        <span class="cs-metric-value" data-value="80" data-suffix="%">80%</span>
         <span class="cs-metric-label">Reduction in Manual Entry</span>
       </div>
       <div class="cs-metric">
-        <span class="cs-metric-value">2hrs</span>
+        <span class="cs-metric-value" data-value="2" data-suffix="hrs">2hrs</span>
         <span class="cs-metric-label">Daily Admin Saved</span>
       </div>
       <div class="cs-metric">
-        <span class="cs-metric-value">99%</span>
+        <span class="cs-metric-value" data-value="99" data-suffix="%">99%</span>
         <span class="cs-metric-label">Data Accuracy Achieved</span>
       </div>
     </div>
@@ -146,6 +198,45 @@
 </footer>
 
 <script>
+const metricValues = document.querySelectorAll('.cs-page-project .cs-metric-value[data-value]');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function animateMetric(el, duration = 1400) {
+  const target = Number(el.dataset.value || 0);
+  const prefix = el.dataset.prefix || "";
+  const suffix = el.dataset.suffix || "";
+  const startTime = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(target * eased);
+    el.textContent = `${prefix}${current}${suffix}`;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+if (metricValues.length) {
+  if (prefersReducedMotion) {
+    metricValues.forEach((el) => {
+      el.textContent = `${el.dataset.prefix || ""}${el.dataset.value || "0"}${el.dataset.suffix || ""}`;
+    });
+  } else {
+    const metricsObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          metricValues.forEach((el) => animateMetric(el));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    const metricsWrap = document.querySelector('.cs-page-project .cs-metrics');
+    if (metricsWrap) metricsObserver.observe(metricsWrap);
+  }
+}
+
 const toggle = document.querySelector('.nav-toggle');
 const links = document.querySelector('.nav-links');
 toggle.addEventListener('click', () => {
