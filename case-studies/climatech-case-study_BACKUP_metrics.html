@@ -31,7 +31,6 @@
   background: #000000;
   border-color: rgba(0, 245, 255, 0.34);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
-  max-width: none;
 }
 
 .cs-page-project .cs-metric-value {
@@ -56,30 +55,9 @@
   font-size: 0.917rem;
 }
 
-.cs-page-project .cs-metrics {
-  max-width: calc(100% - 30mm);
-  margin: 0 0 var(--space-lg);
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  padding: var(--space-md) 0 0;
-}
-
-@media (max-width: 900px) and (min-width: 641px) {
-  .cs-page-project .cs-metrics {
-    max-width: 100%;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 @media (max-width: 640px) {
   .cs-page-project .cs-section {
     max-width: 100%;
-  }
-
-  .cs-page-project .cs-metrics {
-    max-width: 100%;
-    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -114,19 +92,15 @@
     <div class="cs-metrics">
       <div class="cs-metric">
         <span class="cs-metric-value" data-value="80" data-suffix="%">80%</span>
-        <span class="cs-metric-label">MANUAL PROCESSING ELIMINATED</span>
+        <span class="cs-metric-label">Reduction in Manual Entry</span>
       </div>
       <div class="cs-metric">
-        <span class="cs-metric-value" data-value="3" data-suffix="hrs / day">3hrs / day</span>
-        <span class="cs-metric-label">FINANCE CAPACITY RELEASED</span>
+        <span class="cs-metric-value" data-value="2" data-suffix="hrs">2hrs</span>
+        <span class="cs-metric-label">Daily Admin Saved</span>
       </div>
       <div class="cs-metric">
-        <span class="cs-metric-value" data-value="99" data-suffix="%+">99%+</span>
-        <span class="cs-metric-label">CROSS-SYSTEM DATA ACCURACY</span>
-      </div>
-      <div class="cs-metric">
-        <span class="cs-metric-value" data-value="30" data-prefix="$" data-suffix="k+">$30k+</span>
-        <span class="cs-metric-label">ANNUALISED CAPACITY VALUE</span>
+        <span class="cs-metric-value" data-value="99" data-suffix="%">99%</span>
+        <span class="cs-metric-label">Data Accuracy Achieved</span>
       </div>
     </div>
 
