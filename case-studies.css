@@ -124,6 +124,7 @@
   padding: calc(0.72rem + 5mm) 0.86rem 0.8rem calc(0.86rem + 3mm);
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 0.14rem;
   background: #000000;
   position: relative;
