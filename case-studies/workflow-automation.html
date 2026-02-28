@@ -37,6 +37,11 @@
   color: #00f5ff;
 }
 
+.cs-page-project .cs-metric-value.cs-metric-value-compact {
+  font-size: calc(1.75rem - 4pt);
+  transform: translateX(-2px);
+}
+
 .cs-page-project .cs-metric-label {
   color: #ffffff;
 }
@@ -55,9 +60,30 @@
   font-size: 0.917rem;
 }
 
+.cs-page-project .cs-metrics {
+  max-width: calc(100% - 30mm);
+  margin: 0 0 var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  padding: var(--space-md) 0 0;
+}
+
+@media (max-width: 900px) and (min-width: 641px) {
+  .cs-page-project .cs-metrics {
+    max-width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 640px) {
   .cs-page-project .cs-section {
     max-width: 100%;
+  }
+
+  .cs-page-project .cs-metrics {
+    max-width: 100%;
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -85,22 +111,27 @@
 
     <div class="cs-hero">
       <p class="cs-tag">Automation</p>
-      <h1 class="cs-title">Workflow Automation — Ecommerce &amp; CRM</h1>
+      <p class="cs-company">6R Retail</p>
+      <h1 class="cs-title">Workflow Systemisation</h1>
       <p class="cs-subtitle">Designed and implemented workflow automation across ecommerce, email marketing and CRM platforms — reducing manual effort and enabling scalable digital operations.</p>
     </div>
 
     <div class="cs-metrics">
       <div class="cs-metric">
-        <span class="cs-metric-value" data-value="60" data-suffix="%">60%</span>
-        <span class="cs-metric-label">Manual Workflows Eliminated</span>
+        <span class="cs-metric-value" data-value="100" data-suffix="%">100%</span>
+        <span class="cs-metric-label">CONTENT WORKFLOW SYSTEMISED</span>
       </div>
       <div class="cs-metric">
-        <span class="cs-metric-value" data-value="3" data-suffix="x">3x</span>
-        <span class="cs-metric-label">Lead Capture Improvement</span>
+        <span class="cs-metric-value cs-metric-value-compact">IMPLEMENTED</span>
+        <span class="cs-metric-label">ECOMMERCE INFRASTRUCTURE</span>
       </div>
       <div class="cs-metric">
-        <span class="cs-metric-value" data-value="15" data-suffix="+">15+</span>
-        <span class="cs-metric-label">Automations Deployed</span>
+        <span class="cs-metric-value cs-metric-value-compact">OUTSOURCING</span>
+        <span class="cs-metric-label">DELIVERY FRAMEWORK ESTABLISHED</span>
+      </div>
+      <div class="cs-metric">
+        <span class="cs-metric-value cs-metric-value-compact">AUTOMATION</span>
+        <span class="cs-metric-label">TARGETED WORKFLOWS DEPLOYED</span>
       </div>
     </div>
 
@@ -109,7 +140,7 @@
     <section class="cs-section">
       <h2 class="cs-section-title">Overview</h2>
       <p>A growing retail consulting business needed to professionalise its digital operations — from ecommerce fulfilment to email marketing and CRM management. Manual processes were limiting the team's capacity to scale, with customer data fragmented across platforms and campaign workflows requiring constant manual intervention.</p>
-      <p>This project delivered a connected automation framework across Shopify, Zapier, Mailchimp and supporting tools — creating reliable, repeatable workflows that freed the team to focus on strategy and growth.</p>
+      <p>This project delivered a connected operating framework across Shopify, Zapier, Mailchimp and supporting tools, creating reliable, repeatable workflows through targeted workflow automation and measurable outcomes.</p>
     </section>
 
     <div class="cs-divider"></div>
@@ -130,13 +161,17 @@
 
     <section class="cs-section">
       <h2 class="cs-section-title">My Role</h2>
-      <p>Digital delivery consultant responsible for automation strategy, platform configuration and implementation. Led the end-to-end process from current-state analysis through to deployment and handover.</p>
+      <p>Digital delivery and marketing lead engaged to design and implement a structured digital operating model for the business. Led the transformation from fragmented, founder-dependent execution to documented workflows, scalable systems and targeted workflow automation through requirements discovery, platform evaluation, solution definition and delivery alignment.</p>
+      <p>Responsibilities included:</p>
       <ul class="cs-list">
-        <li>Mapped current-state workflows and identified automation opportunities across marketing, sales and operations</li>
-        <li>Defined automation logic and trigger conditions for each workflow</li>
-        <li>Configured Zapier integrations connecting Shopify, Mailchimp, Google Sheets and internal tools</li>
-        <li>Designed email automation sequences for customer lifecycle touchpoints</li>
-        <li>Conducted UAT and provided training documentation for handover</li>
+        <li>Mapping current-state marketing, content and ecommerce workflows to identify process gaps and delegation constraints</li>
+        <li>Designing a structured social media planning and approval framework to enable effective outsourcing</li>
+        <li>Re-architecting and stabilising the WordPress website environment, resolving functional and lead capture issues</li>
+        <li>Implementing ecommerce capability via WooCommerce and integrating customer data flows with Mailchimp</li>
+        <li>Configuring targeted workflow automation across Shopify, Mailchimp and internal tools using Zapier</li>
+        <li>Designing customer lifecycle email sequences including cart abandonment and post-purchase engagement</li>
+        <li>Managing end-to-end book launch execution, including campaign planning, PR outreach and event coordination</li>
+        <li>Training and transitioning delivery to external freelancers</li>
       </ul>
     </section>
 
@@ -144,14 +179,29 @@
 
     <section class="cs-section">
       <h2 class="cs-section-title">Solution Delivered</h2>
-      <p>Deployed a connected automation framework using Zapier as the middleware layer, linking ecommerce events to downstream marketing and operational workflows. Key automations included customer data sync between platforms, triggered email sequences for post-purchase and re-engagement, lead capture routing from web forms to CRM, and operational notifications for order status changes.</p>
+      <p>Designed and implemented a connected digital operating framework across WordPress, WooCommerce, Mailchimp and supporting tools, introducing structured workflows and targeted workflow automation to support workflow improvement and delivery optimisation.</p>
+      <p>Key components included:</p>
+      <ul class="cs-list">
+        <li>A documented social media planning and approval system enabling efficient outsourced execution</li>
+        <li>Stabilised and optimised WordPress infrastructure with improved navigation, lead capture and content publishing workflows</li>
+        <li>Ecommerce implementation via WooCommerce to support book sales and campaign tracking</li>
+        <li>Integration of ecommerce events with Mailchimp subscriber segmentation and lifecycle email sequences</li>
+        <li>Targeted workflow automation using Zapier to synchronise customer data, route leads and trigger operational notifications</li>
+      </ul>
     </section>
 
     <div class="cs-divider"></div>
 
     <section class="cs-section">
       <h2 class="cs-section-title">Commercial / Operational Outcome</h2>
-      <p>The automation framework reduced manual workflow overhead by approximately 60%, improved lead capture reliability and enabled the team to scale marketing activity without adding headcount. Campaign consistency improved through automated triggers rather than manual scheduling.</p>
+      <p>The operating framework significantly improved execution consistency and delegation capability:</p>
+      <ul class="cs-list">
+        <li>Reduced manual marketing workflow overhead by approximately 60%</li>
+        <li>Enabled cost-effective outsourcing through documented planning and approval processes</li>
+        <li>Improved lead capture reliability and subscriber list growth through integrated ecommerce and email systems</li>
+        <li>Supported a successful book launch with structured campaign execution and post-purchase automation</li>
+        <li>Increased marketing consistency and cadence through systemised scheduling and triggered workflows</li>
+      </ul>
     </section>
 
     <div class="cs-divider"></div>
@@ -159,13 +209,12 @@
     <section class="cs-section">
       <h2 class="cs-section-title">Systems &amp; Tools</h2>
       <div class="cs-badges">
-        <span class="cs-badge">Shopify</span>
-        <span class="cs-badge">Zapier</span>
-        <span class="cs-badge">Mailchimp</span>
-        <span class="cs-badge">Google Sheets</span>
         <span class="cs-badge">WordPress</span>
         <span class="cs-badge">WooCommerce</span>
-        <span class="cs-badge">CRM</span>
+        <span class="cs-badge">Mailchimp</span>
+        <span class="cs-badge">Zapier</span>
+        <span class="cs-badge">LiveWebinar</span>
+        <span class="cs-badge">LinkedIn</span>
       </div>
     </section>
   </div>
