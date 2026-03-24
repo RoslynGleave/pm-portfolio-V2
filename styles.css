@@ -1149,6 +1149,10 @@ a { color: inherit; text-decoration: none; }
   padding: var(--space-md) 0 var(--space-lg);
 }
 
+.cs-page-project .cs-hero {
+  padding-bottom: calc(var(--space-lg) - 7mm);
+}
+
 .cs-tag {
   display: inline-block;
   font-size: 0.7rem;

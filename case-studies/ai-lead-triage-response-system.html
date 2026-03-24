@@ -69,6 +69,23 @@
   padding: var(--space-md) 0 0;
 }
 
+.cs-page-project .cs-hero-banner {
+  width: 100%;
+  max-width: calc(100% - 30mm);
+  margin: var(--space-sm) auto var(--space-md) 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(196, 181, 165, 0.3);
+}
+
+.cs-page-project .cs-hero-banner img {
+  display: block;
+  width: 100%;
+  height: clamp(200px, 34vw, 300px);
+  object-fit: cover;
+  object-position: center;
+}
+
 @media (max-width: 900px) and (min-width: 641px) {
   .cs-page-project .cs-metrics {
     max-width: 100%;
@@ -77,6 +94,11 @@
 }
 
 @media (max-width: 640px) {
+  .cs-page-project .cs-hero-banner {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
   .cs-page-project .cs-section {
     max-width: 100%;
   }
@@ -116,9 +138,9 @@
       <p class="cs-subtitle">Automatically categorises inbound enquiries, generates tailored responses, and drafts emails, enabling instant response times and consistent communication at scale, while notifying your team with clear next actions.</p>
     </div>
 
-    <div class="case-study-image" style="margin: 40px 0; text-align: center;">
-      <img src="ai-lead-triage-response-system/hero-image.png" alt="AI Lead Response System" style="max-width: 100%; height: auto;" />
-    </div>
+    <figure class="cs-hero-banner">
+      <img src="ai-lead-triage-response-system/ai_lead_auto_project_hero-image_1.png" alt="AI Lead Response System" loading="eager" decoding="async">
+    </figure>
 
     <div class="cs-metrics">
       <div class="cs-metric">
