@@ -16,6 +16,29 @@
   color: #00f5ff;
 }
 
+.cs-page-project .cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: var(--space-sm);
+}
+
+.cs-page-project .cs-tag-pilot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: 1px solid var(--taupe);
+  background: var(--taupe);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  line-height: 1;
+}
+
 .cs-page-project .cs-tag:hover,
 .cs-page-project .cs-tag:focus-visible {
   background: #000000;
@@ -84,7 +107,10 @@
     <a href="../index.html#work" class="cs-back"><span>&larr;</span> Back to Projects</a>
 
     <div class="cs-hero">
-      <p class="cs-tag">Implementation</p>
+      <div class="cs-tags">
+        <p class="cs-tag">Implementation</p>
+        <span class="cs-tag-status cs-tag-status-delivered">DELIVERED</span>
+      </div>
       <p class="cs-company">Deshabille</p>
       <h1 class="cs-title">ERP Consolidation &amp; Operational Unification</h1>
       <p class="cs-subtitle">Founder-led multi-entity ERP consolidation across finance, inventory and ecommerce, replacing fragmented Xero and Unleashed environments with a unified platform built to support marketplace scale across Australia and Asia.</p>

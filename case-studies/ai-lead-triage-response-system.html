@@ -16,6 +16,29 @@
   color: #00f5ff;
 }
 
+.cs-page-project .cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: var(--space-sm);
+}
+
+.cs-page-project .cs-tag-pilot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: 1px solid var(--taupe);
+  background: var(--taupe);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  line-height: 1;
+}
+
 .cs-page-project .cs-tag:hover,
 .cs-page-project .cs-tag:focus-visible {
   background: #000000;
@@ -132,7 +155,10 @@
     <a href="../index.html#work" class="cs-back"><span>&larr;</span> Back to Projects</a>
 
     <div class="cs-hero">
-      <p class="cs-tag">AI AUTOMATION</p>
+      <div class="cs-tags">
+        <p class="cs-tag">AI AUTOMATION</p>
+        <span class="cs-tag-status cs-tag-status-built">BUILT</span>
+      </div>
       <p class="cs-company">AI Workflow Automation</p>
       <h1 class="cs-title">AI-Powered Lead Response Engine</h1>
       <p class="cs-subtitle">Automatically categorises inbound enquiries, generates tailored responses, and drafts emails, enabling instant response times and consistent communication at scale, while notifying your team with clear next actions.</p>
@@ -148,15 +174,15 @@
         <span class="cs-metric-label">RESPONSE TIME</span>
       </div>
       <div class="cs-metric">
-        <span class="cs-metric-value cs-metric-value-compact">100%</span>
+        <span class="cs-metric-value cs-metric-value-compact" data-value="100" data-suffix="%">100%</span>
         <span class="cs-metric-label">CONSISTENT RESPONSES</span>
       </div>
       <div class="cs-metric">
-        <span class="cs-metric-value cs-metric-value-compact">100%</span>
+        <span class="cs-metric-value cs-metric-value-compact" data-value="100" data-suffix="%">100%</span>
         <span class="cs-metric-label">LEADS CAPTURED</span>
       </div>
       <div class="cs-metric">
-        <span class="cs-metric-value cs-metric-value-compact">~90%</span>
+        <span class="cs-metric-value cs-metric-value-compact" data-value="90" data-prefix="~" data-suffix="%">~90%</span>
         <span class="cs-metric-label">PROCESS AUTOMATED</span>
       </div>
     </div>
@@ -167,7 +193,7 @@
       <h2 class="cs-section-title">Overview</h2>
       <p>As enquiry volumes increase across real estate businesses, manual processes for reviewing, categorising and responding to inbound emails become a bottleneck, leading to delayed responses, inconsistent communication and missed opportunities.</p>
       <div class="case-study-image" style="margin: 60px 0; text-align: center;">
-        <img src="ai-lead-triage-response-system/workflow-diagram.png" alt="AI Workflow Diagram" style="max-width: 800px; width: 100%; height: auto;" />
+        <img src="ai-lead-triage-response-system/ai_lead_auto_project_workflow-diagram.png" alt="AI Workflow Diagram" style="max-width: 800px; width: 100%; height: auto;" />
       </div>
       <p>This project involved designing and building an AI-powered lead triage and response system that automatically categorises inbound enquiries, generates tailored responses, and routes actions to the appropriate team members.</p>
       <p>The system was developed as a deployable solution to demonstrate how AI can streamline enquiry handling, improve response times and reduce operational workload.</p>

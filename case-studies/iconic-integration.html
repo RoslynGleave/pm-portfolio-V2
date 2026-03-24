@@ -16,6 +16,29 @@
   color: #00f5ff;
 }
 
+.cs-page-project .cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: var(--space-sm);
+}
+
+.cs-page-project .cs-tag-pilot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: 1px solid var(--taupe);
+  background: var(--taupe);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  line-height: 1;
+}
+
 .cs-page-project .cs-tag:hover,
 .cs-page-project .cs-tag:focus-visible {
   background: #000000;
@@ -106,7 +129,10 @@
     <a href="../index.html#work" class="cs-back"><span>&larr;</span> Back to Projects</a>
 
     <div class="cs-hero">
-      <p class="cs-tag">Integration</p>
+      <div class="cs-tags">
+        <p class="cs-tag">Integration</p>
+        <span class="cs-tag-status cs-tag-status-delivered">DELIVERED</span>
+      </div>
       <p class="cs-company">The Iconic</p>
       <h1 class="cs-title">Marketplace Systems Integration</h1>
       <p class="cs-subtitle">Built a custom integration connecting ecommerce, ERP and The Iconic marketplace, automating order flow, inventory sync and fulfilment to support 3x revenue growth without increasing headcount.</p>
