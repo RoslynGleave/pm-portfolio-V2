@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ERP Implementation — Odoo | Roslyn Gleave</title>
+<meta name="description" content="Case study: End-to-end Odoo ERP implementation replacing fragmented operations with a unified platform across sales, inventory and finance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css?v=20260207h">
+<style>
+.cs-page-project .cs-tag {
+  background: #000000;
+  border-color: #000000;
+  color: #00f5ff;
+}
+
+.cs-page-project .cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: var(--space-sm);
+}
+
+.cs-page-project .cs-tag-pilot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: 1px solid var(--taupe);
+  background: var(--taupe);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  line-height: 1;
+}
+
+.cs-page-project .cs-tag:hover,
+.cs-page-project .cs-tag:focus-visible {
+  background: #000000;
+  border-color: #000000;
+  color: #00f5ff;
+}
+
+.cs-page-project .cs-title {
+  color: #000000;
+}
+
+.cs-page-project .cs-metric {
+  background: #000000;
+  border-color: rgba(0, 245, 255, 0.34);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+.cs-page-project .cs-metric-value {
+  color: #00f5ff;
+}
+
+.cs-page-project .cs-metric-label {
+  color: #ffffff;
+}
+
+.cs-page-project .cs-badge {
+  background: #000000;
+  color: #00f5ff;
+  border: 1px solid #000000;
+}
+
+.cs-page-project .cs-section {
+  max-width: calc(100% - 30mm);
+}
+
+.cs-page-project .cs-section-title {
+  font-size: 0.917rem;
+}
+
+@media (max-width: 640px) {
+  .cs-page-project .cs-section {
+    max-width: 100%;
+  }
+}
+</style>
+</head>
+<body class="cs-page cs-page-project">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">Roslyn Gleave</a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="../../index.html#capabilities">Capabilities</a></li>
+      <li><a href="../../index.html#work">Projects</a></li>
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="cs-content-wrap">
+  <div class="container">
+    <a href="../../index.html#work" class="cs-back"><span>&larr;</span> Back to Projects</a>
+
+    <div class="cs-hero">
+      <div class="cs-tags">
+        <p class="cs-tag">Implementation</p>
+        <span class="cs-tag-status cs-tag-status-delivered">DELIVERED</span>
+      </div>
+      <p class="cs-company">Deshabille</p>
+      <h1 class="cs-title">ERP Consolidation &amp; Operational Unification</h1>
+      <p class="cs-subtitle">Founder-led multi-entity ERP consolidation across finance, inventory and ecommerce, replacing fragmented Xero and Unleashed environments with a unified platform built to support marketplace scale across Australia and Asia.</p>
+    </div>
+
+    <figure class="cs-hero-banner">
+      <img src="Deshabille Project Banner Image.png" alt="Deshabille ERP consolidation project banner" loading="eager" decoding="async">
+    </figure>
+
+    <div class="cs-metrics">
+      <div class="cs-metric">
+        <span class="cs-metric-value" data-value="100" data-suffix="%">100%</span>
+        <span class="cs-metric-label">CORE OPERATIONS CENTRALISED</span>
+      </div>
+      <div class="cs-metric">
+        <span class="cs-metric-value" data-value="4">4</span>
+        <span class="cs-metric-label">SYSTEMS CONSOLIDATED</span>
+      </div>
+      <div class="cs-metric">
+        <span class="cs-metric-value" data-value="2">2</span>
+        <span class="cs-metric-label">ENTITIES UNIFIED</span>
+      </div>
+      <div class="cs-metric">
+        <span class="cs-metric-value" data-value="4">4</span>
+        <span class="cs-metric-label">INTEGRATIONS DEPLOYED</span>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Overview</h2>
+      <p>As a multi-entity ecommerce brand operating across Australia and key Asian markets including Hong Kong, Malaysia, Taiwan, the Philippines and Singapore, the business had outgrown its finance and inventory stack. Marketplace growth, particularly through The Iconic, increased transaction volumes and exposed performance and reporting limitations within Xero and Unleashed.</p>
+      <p>Operating through both Australian and Hong Kong entities required duplicate subscriptions, manual cross-entity reconciliation and fragmented inventory visibility.</p>
+      <p>This project consolidated finance, inventory, purchasing and ecommerce into Odoo, establishing a unified, scalable operating platform to support continued regional expansion.</p>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">The Challenge</h2>
+      <ul class="cs-list">
+        <li>Duplicate Xero and Unleashed subscriptions across two entities, increasing cost and complexity</li>
+        <li>No single source of truth for inventory across ecommerce channels and 3PL operations</li>
+        <li>Manual credit-note creation for marketplace returns, particularly The Iconic</li>
+        <li>Platform-specific pricing and discount logic managed across disconnected systems</li>
+        <li>Manual cross-entity financial consolidation and reporting</li>
+      </ul>
+      <p>As transaction volume increased, these constraints limited automation, visibility and scalability.</p>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">My Role</h2>
+      <p>Founder and systems delivery lead. Owned the ERP consolidation and platform transition from architecture decision through to go-live and optimisation.</p>
+      <ul class="cs-list">
+        <li>Selected Odoo to centralise multi-entity operations and reduce integration overhead</li>
+        <li>Defined requirements across inventory, accounting, purchasing and reporting</li>
+        <li>Designed and executed full data migration into a unified structure</li>
+        <li>Configured pricing logic, discount automation and marketplace return workflows</li>
+        <li>Implemented automated credit-note processing for marketplace returns</li>
+        <li>Established Odoo as the single source of truth for inventory and 3PL reconciliation</li>
+        <li>Migrated the ecommerce storefront to Odoo's native website platform to reduce external integrations</li>
+        <li>Partnered with a Python developer for custom extensions and workflow optimisation</li>
+      </ul>
+    </section>
+
+    <div class="cs-divider"></div>
+
+	    <section class="cs-section">
+	      <h2 class="cs-section-title">Solution Delivered</h2>
+	      <p>Implemented Odoo as a consolidated ERP platform across finance, inventory and ecommerce, replacing fragmented systems with a centralised multi-entity environment.</p>
+	      <p>Key components:</p>
+	      <ul class="cs-list">
+	        <li>Centralised order management across direct, wholesale and marketplace channels</li>
+	        <li>Unified inventory management with real-time 3PL visibility</li>
+	        <li>Automated marketplace return and credit-note workflows</li>
+	        <li>Channel-specific pricing and discount configuration</li>
+	        <li>Consolidated financial reporting across Australian and Hong Kong entities</li>
+	        <li>Full migration of ecommerce operations onto the ERP platform</li>
+	      </ul>
+	    </section>
+	
+	    <div style="background:rgba(246,243,242,0.92);padding:24px 40px;margin-top:24px;">
+	      <img src="Deshabille%20Orders%20%26%20Returns%20Workflow_V5.png" alt="Order-to-cash and returns automation architecture diagram" loading="lazy" decoding="async" style="width:100%;display:block;">
+	      <p style="margin:10px 0 0;font-size:0.8rem;color:#A89888;line-height:1.55;">Order-to-cash and returns automation architecture across four sales channels. Integrated Odoo ERP, Invenco 3PL, The Iconic, Hard to Find and Magento 2 via REST API with 5-minute inventory sync across all platforms.</p>
+	    </div>
+
+	    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Commercial / Operational Outcome</h2>
+      <ul class="cs-list">
+        <li>Replaced four legacy subscriptions, two Xero and two Unleashed accounts, with a single ERP platform</li>
+        <li>Eliminated duplicate SaaS costs across Australian and Hong Kong entities</li>
+        <li>Achieved consolidation with an upfront investment comparable to approximately one year of prior subscription costs, materially improving long-term operating leverage</li>
+        <li>Centralised 100 percent of order and financial processing into one system</li>
+        <li>Established real-time cross-entity inventory visibility and improved 3PL reconciliation</li>
+        <li>Automated marketplace return processing, removing manual credit-note workload</li>
+        <li>Created a scalable operational foundation to support continued growth across Australia and Asia</li>
+      </ul>
+    </section>
+
+    <div class="cs-divider"></div>
+
+	    <section class="cs-section">
+	      <h2 class="cs-section-title">Systems &amp; Tools</h2>
+	      <div class="cs-badges">
+	        <span class="cs-badge">Odoo ERP</span>
+	        <span class="cs-badge">Magento</span>
+	        <span class="cs-badge">MySQL</span>
+	        <span class="cs-badge">Ubuntu Server</span>
+	        <span class="cs-badge">REST APIs</span>
+	        <span class="cs-badge">Data Migration</span>
+	        <span class="cs-badge">Integration Management</span>
+	        <span class="cs-badge">Change Management</span>
+	      </div>
+	    </section>
+	
+	    <section class="cs-section">
+	      <h2 class="cs-section-title">Platforms &amp; Integrations</h2>
+	      <div class="cs-badges">
+	        <span class="cs-badge">The Iconic</span>
+	        <span class="cs-badge">Hard to Find</span>
+	        <span class="cs-badge">Invenco 3PL</span>
+	      </div>
+	    </section>
+	  </div>
+	</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-text">&copy; 2026 Roslyn Gleave. Built with AI-assisted development.</p>
+      <div class="footer-links">
+        <a href="mailto:roslyngleave@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/roslyn-gleave" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const metricValues = document.querySelectorAll('.cs-page-project .cs-metric-value[data-value]');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function animateMetric(el, duration = 1400) {
+  const target = Number(el.dataset.value || 0);
+  const prefix = el.dataset.prefix || "";
+  const suffix = el.dataset.suffix || "";
+  const startTime = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(target * eased);
+    el.textContent = `${prefix}${current}${suffix}`;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+if (metricValues.length) {
+  if (prefersReducedMotion) {
+    metricValues.forEach((el) => {
+      el.textContent = `${el.dataset.prefix || ""}${el.dataset.value || "0"}${el.dataset.suffix || ""}`;
+    });
+  } else {
+    const metricsObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          metricValues.forEach((el) => animateMetric(el));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    const metricsWrap = document.querySelector('.cs-page-project .cs-metrics');
+    if (metricsWrap) metricsObserver.observe(metricsWrap);
+  }
+}
+
+const toggle = document.querySelector('.nav-toggle');
+const links = document.querySelector('.nav-links');
+toggle.addEventListener('click', () => {
+  links.classList.toggle('open');
+  toggle.classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.classList.remove('open');
+  });
+});
+</script>
+
+</body>
+</html>

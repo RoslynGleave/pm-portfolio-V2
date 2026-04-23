@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Lead Triage &amp; Response System | Roslyn Gleave</title>
+<meta name="description" content="Case study: AI-powered lead triage and response system that categorises enquiries, drafts tailored emails and routes next actions automatically.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css?v=20260207h">
+<style>
+.cs-page-project .cs-tag {
+  background: #000000;
+  border-color: #000000;
+  color: #00f5ff;
+}
+
+.cs-page-project .cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: var(--space-sm);
+}
+
+.cs-page-project .cs-tag-pilot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: 1px solid var(--taupe);
+  background: var(--taupe);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  line-height: 1;
+}
+
+.cs-page-project .cs-tag:hover,
+.cs-page-project .cs-tag:focus-visible {
+  background: #000000;
+  border-color: #000000;
+  color: #00f5ff;
+}
+
+.cs-page-project .cs-title {
+  color: #000000;
+}
+
+.cs-page-project .cs-metric {
+  background: #000000;
+  border-color: rgba(0, 245, 255, 0.34);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+.cs-page-project .cs-metric-value {
+  color: #00f5ff;
+}
+
+.cs-page-project .cs-metric-value.cs-metric-value-compact {
+  font-size: calc(1.75rem - 4pt);
+  transform: translateX(-2px);
+}
+
+.cs-page-project .cs-metric-label {
+  color: #ffffff;
+}
+
+.cs-page-project .cs-badge {
+  background: #000000;
+  color: #00f5ff;
+  border: 1px solid #000000;
+}
+
+.cs-page-project .cs-section {
+  max-width: calc(100% - 30mm);
+}
+
+.cs-page-project .cs-section-title {
+  font-size: 0.917rem;
+}
+
+.cs-page-project .cs-metrics {
+  max-width: calc(100% - 30mm);
+  margin: 0 0 var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  padding: var(--space-md) 0 0;
+}
+
+@media (max-width: 900px) and (min-width: 641px) {
+  .cs-page-project .cs-metrics {
+    max-width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-page-project .cs-section {
+    max-width: 100%;
+  }
+
+  .cs-page-project .cs-metrics {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body class="cs-page cs-page-project">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">Roslyn Gleave</a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="../../index.html#capabilities">Capabilities</a></li>
+      <li><a href="../../index.html#work">Projects</a></li>
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="cs-content-wrap">
+  <div class="container">
+    <a href="../../index.html#work" class="cs-back"><span>&larr;</span> Back to Projects</a>
+
+    <div class="cs-hero">
+      <div class="cs-tags">
+        <p class="cs-tag">AI AUTOMATION</p>
+        <span class="cs-tag-status cs-tag-status-built">BUILT</span>
+      </div>
+      <p class="cs-company">AI Workflow Automation</p>
+      <h1 class="cs-title">AI-Powered Lead Response Engine</h1>
+      <p class="cs-subtitle">Automatically categorises inbound enquiries, generates tailored responses, and drafts emails, enabling instant response times and consistent communication at scale, while notifying your team with clear next actions.</p>
+    </div>
+
+    <figure class="cs-hero-banner">
+      <img src="ai_lead_auto_project_hero-image_1.png" alt="AI Lead Response System" loading="eager" decoding="async">
+    </figure>
+
+    <div class="cs-metrics">
+      <div class="cs-metric">
+        <span class="cs-metric-value cs-metric-value-compact">Instant</span>
+        <span class="cs-metric-label">RESPONSE TIME</span>
+      </div>
+      <div class="cs-metric">
+        <span class="cs-metric-value cs-metric-value-compact" data-value="100" data-suffix="%">100%</span>
+        <span class="cs-metric-label">CONSISTENT RESPONSES</span>
+      </div>
+      <div class="cs-metric">
+        <span class="cs-metric-value cs-metric-value-compact" data-value="100" data-suffix="%">100%</span>
+        <span class="cs-metric-label">LEADS CAPTURED</span>
+      </div>
+      <div class="cs-metric">
+        <span class="cs-metric-value cs-metric-value-compact" data-value="90" data-prefix="~" data-suffix="%">~90%</span>
+        <span class="cs-metric-label">PROCESS AUTOMATED</span>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Overview</h2>
+      <p>As enquiry volumes increase across real estate businesses, manual processes for reviewing, categorising and responding to inbound emails become a bottleneck, leading to delayed responses, inconsistent communication and missed opportunities.</p>
+      <div class="case-study-image" style="margin: 60px 0; text-align: center;">
+        <img src="ai_lead_auto_project_workflow-diagram_1.png" alt="AI Workflow Diagram" style="max-width: 800px; width: 100%; height: auto;" />
+      </div>
+      <p>This project involved designing and building an AI-powered lead triage and response system that automatically categorises inbound enquiries, generates tailored responses, and routes actions to the appropriate team members.</p>
+      <p>The system was developed as a deployable solution to demonstrate how AI can streamline enquiry handling, improve response times and reduce operational workload.</p>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">The Challenge</h2>
+      <p>Real estate teams manage a high volume of inbound enquiries across buyers, sellers and tenants, each requiring timely and context-specific responses.</p>
+      <p>Manual triage of emails introduces delays, increases the risk of missed or misclassified enquiries, and creates inconsistency in communication quality across the team.</p>
+      <p>Without structured workflows and automation, enquiry handling becomes reactive, limiting the ability to scale operations efficiently while maintaining a high level of service.</p>
+      <p>Additionally, valuable lead data is often underutilised, with limited integration between communication channels and CRM systems, reducing visibility and follow-through.</p>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">My Role</h2>
+      <p>Solution design and development, responsible for translating a common operational challenge into a scalable AI-driven workflow.</p>
+      <ul class="cs-list">
+        <li>Defined end-to-end enquiry handling workflow</li>
+        <li>Designed AI prompt architecture for categorisation and response generation</li>
+        <li>Built automation workflow for routing and execution</li>
+        <li>Structured outputs including summary, urgency, and responses</li>
+        <li>Designed CRM integration points</li>
+      </ul>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Solution Delivered</h2>
+      <p>Designed and built an AI-powered workflow that automates the triage and handling of inbound enquiries.</p>
+      <p>Key components include:</p>
+      <ul class="cs-list">
+        <li>Automated categorisation of enquiries</li>
+        <li>Urgency assessment and summarisation</li>
+        <li>AI-generated email responses</li>
+        <li>Draft email creation</li>
+        <li>Internal team notifications with next steps</li>
+        <li>CRM integration pathway for lead capture</li>
+      </ul>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Business Value</h2>
+      <ul class="cs-list">
+        <li>Respond to every enquiry instantly</li>
+        <li>Eliminate manual triage</li>
+        <li>Ensure consistent, high-quality communication</li>
+        <li>Reduce team workload</li>
+        <li>Capture and track every lead</li>
+      </ul>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Systems &amp; Tools</h2>
+      <div class="cs-badges">
+        <span class="cs-badge">OpenAI GPT</span>
+        <span class="cs-badge">Make</span>
+        <span class="cs-badge">Gmail</span>
+        <span class="cs-badge">Webhooks</span>
+        <span class="cs-badge">JSON</span>
+        <span class="cs-badge">Figma</span>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-text">&copy; 2026 Roslyn Gleave. Built with AI-assisted development.</p>
+      <div class="footer-links">
+        <a href="mailto:roslyngleave@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/roslyn-gleave" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const metricValues = document.querySelectorAll('.cs-page-project .cs-metric-value[data-value]');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function animateMetric(el, duration = 1400) {
+  const target = Number(el.dataset.value || 0);
+  const prefix = el.dataset.prefix || "";
+  const suffix = el.dataset.suffix || "";
+  const startTime = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(target * eased);
+    el.textContent = `${prefix}${current}${suffix}`;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+if (metricValues.length) {
+  if (prefersReducedMotion) {
+    metricValues.forEach((el) => {
+      el.textContent = `${el.dataset.prefix || ""}${el.dataset.value || "0"}${el.dataset.suffix || ""}`;
+    });
+  } else {
+    const metricsObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          metricValues.forEach((el) => animateMetric(el));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    const metricsWrap = document.querySelector('.cs-page-project .cs-metrics');
+    if (metricsWrap) metricsObserver.observe(metricsWrap);
+  }
+}
+
+const toggle = document.querySelector('.nav-toggle');
+const links = document.querySelector('.nav-links');
+toggle.addEventListener('click', () => {
+  links.classList.toggle('open');
+  toggle.classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.classList.remove('open');
+  });
+});
+</script>
+
+</body>
+</html>

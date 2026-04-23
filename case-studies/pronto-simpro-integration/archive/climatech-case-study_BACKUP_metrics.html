@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=20260207h">
+<link rel="stylesheet" href="../../../styles.css?v=20260207h">
 <style>
 .cs-page-project .cs-tag {
   background: #000000;
@@ -66,27 +66,27 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">Roslyn Gleave</a>
+    <a href="../../../index.html" class="nav-logo">Roslyn Gleave</a>
     <button class="nav-toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="../index.html#capabilities">Capabilities</a></li>
-      <li><a href="../index.html#work">Projects</a></li>
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="../index.html#contact" class="nav-cta">Get in Touch</a></li>
+      <li><a href="../../../index.html#capabilities">Capabilities</a></li>
+      <li><a href="../../../index.html#work">Projects</a></li>
+      <li><a href="../../../index.html#about">About</a></li>
+      <li><a href="../../../index.html#contact" class="nav-cta">Get in Touch</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="cs-content-wrap">
   <div class="container">
-    <a href="../index.html#work" class="cs-back"><span>&larr;</span> Back to Projects</a>
+    <a href="../../../index.html#work" class="cs-back"><span>&larr;</span> Back to Projects</a>
 
     <div class="cs-hero">
       <p class="cs-tag">Transformation</p>
-      <h1 class="cs-title">ERP &amp; Platform Transformation — Pronto &amp; Simpro</h1>
-      <p class="cs-subtitle">Enterprise finance and operations integration project — eliminating manual invoice and purchase order processing between Simpro field services and Pronto ERP.</p>
+      <h1 class="cs-title">ERP &amp; Platform Transformation - Pronto &amp; Simpro</h1>
+      <p class="cs-subtitle">Enterprise finance and operations integration project, eliminating manual invoice and purchase order processing between Simpro field services and Pronto ERP.</p>
     </div>
 
     <div class="cs-metrics">
@@ -108,8 +108,8 @@
 
     <section class="cs-section">
       <h2 class="cs-section-title">Overview</h2>
-      <p>Climatech, a multi-division mechanical services and construction business, operated Simpro for field operations and job management alongside Pronto ERP for finance, procurement and reporting. The systems were not integrated, resulting in duplicate manual entry of invoices, purchase orders and receipts, increasing administrative overhead, introducing data inconsistencies and limiting real-time financial visibility.</p>
-      <p>This project delivered a custom API integration to automate bi-directional data flows between Simpro and Pronto, preserving the existing financial ERP while eliminating manual reconciliation and improving reporting accuracy.</p>
+      <p>Climatech, a multi-division mechanical services and construction business, operated Simpro for field operations and job management alongside Pronto ERP for finance, procurement and reporting. The two systems were disconnected, requiring double manual entry of invoices, purchase orders and receipts. This consumed significant administrative time and introduced accuracy and data quality risks.</p>
+      <p>This project delivered a custom API integration to automate data flows between Simpro and Pronto, preserving financial system integrity while eliminating manual processing.</p>
     </section>
 
     <div class="cs-divider"></div>
@@ -118,9 +118,9 @@
       <h2 class="cs-section-title">The Challenge</h2>
       <p>The disconnect between Simpro and Pronto created several operational bottlenecks:</p>
       <ul class="cs-list">
-        <li>Invoice data from Simpro was manually re-entered into Pronto ERP — a time-consuming and error-prone process</li>
+        <li>Invoice data from Simpro was manually re-entered into Pronto ERP, creating a time-consuming and error-prone process</li>
         <li>Purchase orders raised in Pronto had no automated link back to Simpro job costing</li>
-        <li>Finance team spent hours daily reconciling data between the two systems</li>
+        <li>The finance team spent hours each day reconciling data between the two systems</li>
         <li>Discrepancies between systems created reporting inaccuracies and delayed month-end close</li>
         <li>High transaction volumes amplified every manual process bottleneck</li>
       </ul>
@@ -129,15 +129,15 @@
     <div class="cs-divider"></div>
 
     <section class="cs-section">
-      <h2 class="cs-section-title">My Role</h2>
-      <p>Technical Business Analyst and project lead, acting as the bridge between business stakeholders (CFO, finance team, operations managers) and the development resource. Responsible for:</p>
+      <h2 class="cs-section-title">Technical Project Manager and Business Analyst</h2>
+      <p>Technical Project Manager and Business Analyst, brought into the project to stabilise delivery and lead business-to-technical alignment. Acting as the bridge between the CFO, finance team, operations managers and the development resource, I was responsible for:</p>
       <ul class="cs-list">
-        <li>Business process mapping — documented current-state invoice and PO workflows end-to-end</li>
-        <li>Requirements gathering through stakeholder workshops with finance, operations and IT</li>
-        <li>Integration scoping — defined API endpoints, data mappings, validation rules and error handling</li>
-        <li>Produced Functional Requirements Specification (FRS) for developer handoff</li>
-        <li>Designed and coordinated SIT and UAT test frameworks</li>
-        <li>Managed release planning, go-live oversight and post-deployment stabilisation</li>
+        <li>Mapping current-state invoice and purchase order workflows to clarify integration gaps</li>
+        <li>Facilitating stakeholder workshops to define functional and data requirements</li>
+        <li>Integration scoping, including API endpoints, field mappings, validation logic and exception handling</li>
+        <li>Coordinating System Integration Testing and User Acceptance Testing frameworks</li>
+        <li>Managing release planning, go-live execution and post-deployment stabilisation</li>
+        <li>Producing technical and process documentation for ongoing operational support</li>
       </ul>
     </section>
 
@@ -145,13 +145,14 @@
 
     <section class="cs-section">
       <h2 class="cs-section-title">Solution Delivered</h2>
-      <p>Designed and delivered a REST API integration between Simpro and Pronto ERP with the following components:</p>
+      <p>Designed and delivered a REST API integration between Simpro and Pronto ERP comprising the following components:</p>
       <ul class="cs-list">
-        <li>Automated invoice synchronisation — Simpro-generated invoices pushed to Pronto with full GL code mapping</li>
-        <li>Purchase order data flow — POs created in Pronto automatically linked to Simpro job records</li>
-        <li>Validation rules to catch data discrepancies before they entered the ERP</li>
-        <li>Error queue with retry logic and alerting for failed transactions</li>
-        <li>Reconciliation reporting to give finance visibility into sync status and exceptions</li>
+        <li>Automated synchronisation of invoices, purchase orders and receipts. Simpro-generated invoices were retrieved by Pronto with full General Ledger (GL) code mapping and legacy financial data alignment</li>
+        <li>Purchase order data flows. POs created in Pronto automatically linked back to Simpro job records, ensuring accurate job costing visibility</li>
+        <li>Validation rules to identify and prevent data discrepancies before entry into the ERP</li>
+        <li>Error queue framework with retry logic and automated alerting for failed transactions</li>
+        <li>User-friendly error notification design to support finance and operations troubleshooting</li>
+        <li>Standard Operating Procedure (SOP) documentation to guide post go-live operational support</li>
       </ul>
     </section>
 
@@ -160,12 +161,12 @@
     <section class="cs-section">
       <h2 class="cs-section-title">Commercial / Operational Outcome</h2>
       <ul class="cs-list">
-        <li>Eliminated approximately 80% of manual invoice and PO data entry</li>
-        <li>Freed approximately 2 hours of daily finance admin capacity</li>
-        <li>Achieved 99%+ data accuracy between Simpro and Pronto through automated validation</li>
-        <li>Reduced month-end reconciliation time significantly</li>
-        <li>Improved financial reporting accuracy and timeliness</li>
-        <li>Created a scalable integration pattern that could be extended to other Pronto modules</li>
+        <li>Eliminated approximately 80% of manual invoice, purchase order and receipt data entry</li>
+        <li>Released approximately 3 hours per day of finance administrative capacity</li>
+        <li>Achieved 99%+ data accuracy between Simpro and Pronto through automated validation controls</li>
+        <li>Reduced month-end reconciliation cycle time through automated data alignment</li>
+        <li>Improved financial reporting accuracy and timeliness across operations and finance</li>
+        <li>Established a scalable integration framework that can be extended across additional Climatech divisions or future acquisitions</li>
       </ul>
     </section>
 

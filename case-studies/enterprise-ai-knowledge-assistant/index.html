@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enterprise AI Knowledge Assistant | Roslyn Gleave</title>
+<meta name="description" content="Case study: Enterprise AI knowledge assistant solution architecture and MVP pilot design to operationalise institutional knowledge with RAG.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css?v=20260226a">
+<style>
+.cs-page-pathfindr .cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: var(--space-sm);
+}
+
+.cs-page-pathfindr .cs-tag {
+  margin-bottom: 0;
+  background: #000000;
+  border-color: #000000;
+  color: #00f5ff;
+}
+
+.cs-page-pathfindr .cs-tag-pilot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: 1px solid var(--taupe);
+  background: var(--taupe);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  line-height: 1;
+}
+
+.cs-page-pathfindr .cs-hero-banner {
+  width: 100%;
+  max-width: calc(100% - 30mm);
+  margin: var(--space-sm) auto var(--space-md) 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(196, 181, 165, 0.3);
+}
+
+.cs-page-pathfindr .cs-hero-banner img {
+  display: block;
+  width: 100%;
+  height: clamp(200px, 34vw, 300px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.cs-page-pathfindr .cs-pilot-note {
+  margin-top: -0.3rem;
+  margin-bottom: var(--space-md);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--sand);
+  opacity: 0.85;
+}
+
+.cs-page-pathfindr .cs-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: var(--space-md);
+}
+
+.cs-page-pathfindr .cs-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+}
+
+.cs-page-pathfindr .cs-cta-btn-primary {
+  background: #000000;
+  color: #00f5ff;
+  border-color: #000000;
+}
+
+.cs-page-pathfindr .cs-cta-btn-primary:hover,
+.cs-page-pathfindr .cs-cta-btn-primary:focus-visible {
+  border-color: #00f5ff;
+}
+
+.cs-page-pathfindr .cs-cta-btn-secondary {
+  background: transparent;
+  color: #00f5ff;
+  border-color: #00f5ff;
+}
+
+.cs-page-pathfindr .cs-cta-btn-secondary:hover,
+.cs-page-pathfindr .cs-cta-btn-secondary:focus-visible {
+  background: rgba(0, 245, 255, 0.1);
+}
+
+.cs-page-pathfindr .cs-hero {
+  padding-bottom: calc(var(--space-lg) - 7mm);
+}
+
+.cs-page-pathfindr .cs-subtitle {
+  max-width: calc(100% - 30mm);
+}
+
+.cs-page-pathfindr .cs-title {
+  color: #000000;
+}
+
+.cs-page-pathfindr .cs-metric {
+  background: #000000;
+  border-color: rgba(0, 245, 255, 0.34);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+.cs-page-pathfindr .cs-metric-value {
+  color: #00f5ff;
+}
+
+.cs-page-pathfindr .cs-metric-label {
+  color: #ffffff;
+}
+
+.cs-page-pathfindr .cs-metric-note {
+  margin-top: calc(0.5rem - 10mm);
+  font-size: 0.833rem;
+  line-height: 1.4;
+  color: var(--sand);
+  font-weight: 500;
+}
+
+.cs-page-pathfindr .cs-diagram figcaption {
+  font-size: 0.833rem;
+  font-weight: 500;
+}
+
+.cs-page-pathfindr .cs-badge {
+  background: #000000;
+  color: #00f5ff;
+  border: 1px solid #000000;
+}
+
+.cs-page-pathfindr .cs-section {
+  max-width: calc(100% - 30mm);
+}
+
+.cs-page-pathfindr .cs-section-title {
+  font-size: 0.917rem;
+}
+
+.cs-page-pathfindr .cs-metrics {
+  max-width: calc(100% - 30mm);
+  margin: 0 0 var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  padding: var(--space-md) 0 0;
+}
+
+.cs-page-pathfindr .cs-metric {
+  max-width: none;
+}
+
+@media (max-width: 640px) {
+  .cs-page-pathfindr .cs-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cs-page-pathfindr .cs-cta-btn {
+    width: 100%;
+  }
+
+  .cs-page-pathfindr .cs-hero-banner {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .cs-page-pathfindr .cs-subtitle {
+    max-width: 100%;
+  }
+
+  .cs-page-pathfindr .cs-section {
+    max-width: 100%;
+  }
+
+  .cs-page-pathfindr .cs-metrics {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 641px) {
+  .cs-page-pathfindr .cs-metrics {
+    max-width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+</style>
+</head>
+<body class="cs-page cs-page-pathfindr">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">Roslyn Gleave</a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="../../index.html#capabilities">Capabilities</a></li>
+      <li><a href="../../index.html#work">Projects</a></li>
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="cs-content-wrap">
+  <div class="container">
+    <a href="../../index.html#work" class="cs-back"><span>&larr;</span> Back to Projects</a>
+
+    <div class="cs-hero">
+      <div class="cs-tags">
+        <p class="cs-tag">AI Solution Architecture</p>
+        <span class="cs-tag-status cs-tag-status-taupe">PILOT</span>
+      </div>
+      <h1 class="cs-title">Enterprise AI Knowledge Assistant</h1>
+      <p class="cs-subtitle">Operationalising Institutional Knowledge with AI through a structured discovery process, permission-aware retrieval architecture and a measurable MVP pilot design.</p>
+    </div>
+
+    <figure class="cs-hero-banner">
+      <img src="pathfindr-ai-project-page-hero.jpg" alt="Enterprise knowledge flow visual for the AI knowledge assistant pilot" loading="eager" decoding="async">
+    </figure>
+
+    <div class="cs-metrics">
+      <div class="cs-metric">
+        <span class="cs-metric-value" data-metric-type="range" data-start="30" data-end="50" data-suffix="%">30&ndash;50%</span>
+        <span class="cs-metric-label">Retrieval time reduction</span>
+      </div>
+      <div class="cs-metric">
+        <span class="cs-metric-value" data-metric-type="range" data-start="25" data-end="40" data-suffix="%">25&ndash;40%</span>
+        <span class="cs-metric-label">Billable delivery uplift</span>
+      </div>
+      <div class="cs-metric">
+        <span class="cs-metric-value" data-metric-type="range" data-start="0" data-end="70" data-suffix="%">70%</span>
+        <span class="cs-metric-label">Duplicate work eliminated</span>
+      </div>
+      <div class="cs-metric">
+        <span class="cs-metric-value" data-metric-type="range" data-start="1.8" data-end="2.6" data-prefix="$" data-between-prefix="$" data-suffix="M" data-decimals="1">$1.8M&ndash;$2.6M</span>
+        <span class="cs-metric-label">Rework cost avoided p.a</span>
+      </div>
+    </div>
+    <p class="cs-metric-note">All metrics are pilot estimates.</p>
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Overview</h2>
+      <p>This case study translates an ambiguous enterprise AI opportunity into a practical implementation blueprint. The objective was to help a consulting organisation unlock and operationalise institutional knowledge spread across proposals, delivery artefacts and legacy documentation.</p>
+      <p>The resulting design focuses on secure ingestion, semantic retrieval (RAG), and deployment into existing collaboration environments so teams can find and reuse internal knowledge faster without compromising governance.</p>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Company Overview</h2>
+      <p><strong>Northbridge Advisory Group</strong> (fictional) is a 450-person professional services firm in Sydney, Melbourne and Brisbane, delivering digital transformation, ERP implementation, analytics and operational optimisation programs for enterprise and mid-market clients.</p>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Business Context</h2>
+      <p>Five years of rapid growth, service-line expansion and acquisitions created significant knowledge fragmentation. Valuable intellectual property existed across disconnected systems and individual repositories, making reuse inconsistent and slow.</p>
+      <ul class="cs-list">
+        <li>Knowledge spread across SharePoint, Google Drive, legacy Confluence, proposal archives and delivery documents</li>
+        <li>No structured retrieval capability across repositories</li>
+        <li>High dependency on informal expert networks to locate reusable content</li>
+      </ul>
+    </section>
+
+    <figure class="cs-diagram">
+      <img src="pathfindr-current-state-workflow.jpg" alt="Current-state enterprise knowledge retrieval workflow across disconnected systems" loading="lazy" decoding="async">
+      <figcaption>Current-state knowledge retrieval workflow and points of friction.</figcaption>
+    </figure>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Initial Problem Statement</h2>
+      <p>Leadership identified a large volume of valuable institutional IP but low practical reuse across bids and delivery. Teams were spending significant time searching, recreating content and escalating to SMEs rather than leveraging existing knowledge assets.</p>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Observable Pain Points</h2>
+      <ul class="cs-list">
+        <li>Proposal teams frequently recreated content from scratch</li>
+        <li>Case studies and methodologies were difficult to locate quickly</li>
+        <li>Consultants reinvented deliverables across engagements</li>
+        <li>Critical IP risk increased when key employees exited</li>
+        <li>Duplicate documentation persisted across multiple systems</li>
+      </ul>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Structured Discovery Framework</h2>
+      <ul class="cs-list">
+        <li>Stakeholder discovery across sales, delivery, practice leads, knowledge management and IT/security</li>
+        <li>Content landscape mapping: repositories, file formats, duplication and metadata maturity</li>
+        <li>Workflow analysis for proposal development, delivery preparation and SME escalation patterns</li>
+        <li>Risk and governance assessment: permissions, compliance, client confidentiality and data residency</li>
+      </ul>
+      <p>This discovery phase reframed the challenge as a retrieval and governance problem, not only an automation problem.</p>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Refined Problem Statement</h2>
+      <p>The organisation lacked a structured, permission-aware capability for retrieving institutional knowledge across disconnected systems. This drove duplicated effort, inconsistent outputs, repeated SME interruptions and reduced delivery scalability.</p>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section" id="solution-architecture">
+      <h2 class="cs-section-title">AI Solution Architecture</h2>
+      <ul class="cs-list">
+        <li><strong>Knowledge ingestion layer:</strong> secure connectors ingest approved repositories while preserving document permissions</li>
+        <li><strong>Processing and indexing layer:</strong> chunking and embeddings transform documents for semantic retrieval</li>
+        <li><strong>Retrieval layer (RAG core):</strong> context-grounded responses generated from retrieved internal sources</li>
+        <li><strong>Interaction layer:</strong> assistant delivered in Teams, Slack or secure web interface</li>
+        <li><strong>Governance and permission layer:</strong> role-based access, audit logging and compliance controls</li>
+      </ul>
+    </section>
+
+    <figure class="cs-diagram cs-diagram-half">
+      <img src="pathfindr-ai-solution-architecture.jpg" alt="AI knowledge assistant solution architecture for ingestion indexing retrieval interaction and governance" loading="lazy" decoding="async">
+      <figcaption>Target architecture for secure, retrieval-augmented institutional knowledge access.</figcaption>
+    </figure>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section" id="mvp-pilot-design">
+      <h2 class="cs-section-title">MVP Pilot Design</h2>
+      <p>The rollout model was intentionally constrained to validate business value quickly while controlling risk.</p>
+      <ul class="cs-list">
+        <li>Single-function pilot scope (proposal or delivery preparation team)</li>
+        <li>Curated ingestion of high-value assets: proposals, case studies and methodologies</li>
+        <li>10-20 pilot users in a secure internal environment</li>
+        <li>Grounded responses with source-linked retrieval for trust and traceability</li>
+      </ul>
+    </section>
+
+    <figure class="cs-diagram">
+      <img src="pathfindr-mvp-pilot-deployment.jpg" alt="MVP pilot deployment model for enterprise AI knowledge assistant" loading="lazy" decoding="async">
+      <figcaption>MVP pilot deployment model with governance guardrails and measurable outcomes.</figcaption>
+    </figure>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Success Metrics</h2>
+      <ul class="cs-list">
+        <li>Reduction in time spent retrieving internal knowledge</li>
+        <li>Faster proposal development cycle times</li>
+        <li>Lower SME interruption frequency during bids</li>
+        <li>Higher knowledge reuse rates across teams</li>
+        <li>User adoption and satisfaction across the pilot cohort</li>
+      </ul>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Expected Business Outcomes</h2>
+      <ul class="cs-list">
+        <li>30-50% reduction in knowledge retrieval time</li>
+        <li>Accelerated proposal turnaround</li>
+        <li>Reduced dependency on individual SMEs</li>
+        <li>Improved onboarding speed for new consultants</li>
+        <li>Knowledge treated as a scalable organisational asset</li>
+      </ul>
+    </section>
+
+    <div class="cs-divider"></div>
+
+    <section class="cs-section">
+      <h2 class="cs-section-title">Systems &amp; Tools</h2>
+      <div class="cs-badges">
+        <span class="cs-badge">AI Solution Architecture</span>
+        <span class="cs-badge">RAG</span>
+        <span class="cs-badge">Vector Indexing</span>
+        <span class="cs-badge">Semantic Retrieval</span>
+        <span class="cs-badge">Enterprise Governance</span>
+        <span class="cs-badge">MVP Pilot Design</span>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-text">&copy; 2026 Roslyn Gleave. Built with AI-assisted development.</p>
+      <div class="footer-links">
+        <a href="mailto:roslyngleave@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/roslyn-gleave" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const metricValues = document.querySelectorAll('.cs-page-pathfindr .cs-metric-value[data-metric-type="range"]');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function animateRangeMetric(el, duration = 1400) {
+  const startTarget = Number(el.dataset.start || 0);
+  const endTarget = Number(el.dataset.end || 0);
+  const prefix = el.dataset.prefix || "";
+  const betweenPrefix = el.dataset.betweenPrefix || prefix;
+  const suffix = el.dataset.suffix || "";
+  const decimals = Number(el.dataset.decimals || 0);
+  const startTime = performance.now();
+
+  function formatNumber(value) {
+    if (decimals > 0) return value.toFixed(decimals);
+    return String(Math.round(value));
+  }
+
+  function tick(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const currentStart = formatNumber(startTarget * eased);
+    const currentEnd = formatNumber(endTarget * eased);
+    el.textContent = `${prefix}${currentStart}\u2013${betweenPrefix}${currentEnd}${suffix}`;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+if (metricValues.length) {
+  if (prefersReducedMotion) {
+    metricValues.forEach((el) => {
+      const prefix = el.dataset.prefix || "";
+      const betweenPrefix = el.dataset.betweenPrefix || prefix;
+      const suffix = el.dataset.suffix || "";
+      el.textContent = `${prefix}${el.dataset.start}\u2013${betweenPrefix}${el.dataset.end}${suffix}`;
+    });
+  } else {
+    const metricsObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          metricValues.forEach((el) => animateRangeMetric(el));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    const metricsWrap = document.querySelector('.cs-page-pathfindr .cs-metrics');
+    if (metricsWrap) metricsObserver.observe(metricsWrap);
+  }
+}
+
+const toggle = document.querySelector('.nav-toggle');
+const links = document.querySelector('.nav-links');
+toggle.addEventListener('click', () => {
+  links.classList.toggle('open');
+  toggle.classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.classList.remove('open');
+  });
+});
+</script>
+
+</body>
+</html>

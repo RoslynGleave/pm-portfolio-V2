@@ -8,12 +8,35 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=20260207h">
+<link rel="stylesheet" href="../../styles.css?v=20260207h">
 <style>
 .cs-page-project .cs-tag {
   background: #000000;
   border-color: #000000;
   color: #00f5ff;
+}
+
+.cs-page-project .cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: var(--space-sm);
+}
+
+.cs-page-project .cs-tag-pilot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: 1px solid var(--taupe);
+  background: var(--taupe);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  line-height: 1;
 }
 
 .cs-page-project .cs-tag:hover,
@@ -31,6 +54,7 @@
   background: #000000;
   border-color: rgba(0, 245, 255, 0.34);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+  max-width: none;
 }
 
 .cs-page-project .cs-metric-value {
@@ -55,9 +79,30 @@
   font-size: 0.917rem;
 }
 
+.cs-page-project .cs-metrics {
+  max-width: calc(100% - 30mm);
+  margin: 0 0 var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  padding: var(--space-md) 0 0;
+}
+
+@media (max-width: 900px) and (min-width: 641px) {
+  .cs-page-project .cs-metrics {
+    max-width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 640px) {
   .cs-page-project .cs-section {
     max-width: 100%;
+  }
+
+  .cs-page-project .cs-metrics {
+    max-width: 100%;
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -66,41 +111,54 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">Roslyn Gleave</a>
+    <a href="../../index.html" class="nav-logo">Roslyn Gleave</a>
     <button class="nav-toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="../index.html#capabilities">Capabilities</a></li>
-      <li><a href="../index.html#work">Projects</a></li>
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="../index.html#contact" class="nav-cta">Get in Touch</a></li>
+      <li><a href="../../index.html#capabilities">Capabilities</a></li>
+      <li><a href="../../index.html#work">Projects</a></li>
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#contact" class="nav-cta">Get in Touch</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="cs-content-wrap">
   <div class="container">
-    <a href="../index.html#work" class="cs-back"><span>&larr;</span> Back to Projects</a>
+    <a href="../../index.html#work" class="cs-back"><span>&larr;</span> Back to Projects</a>
 
     <div class="cs-hero">
-      <p class="cs-tag">Transformation</p>
-      <h1 class="cs-title">ERP &amp; Platform Transformation - Pronto &amp; Simpro</h1>
+      <div class="cs-tags">
+        <p class="cs-tag">Transformation</p>
+        <span class="cs-tag-status cs-tag-status-delivered">DELIVERED</span>
+      </div>
+      <p class="cs-company">Climatech</p>
+      <h1 class="cs-title">ERP &amp; Platform Transformation</h1>
+      <p class="cs-attribution">Delivered in partnership with Sola Consulting</p>
       <p class="cs-subtitle">Enterprise finance and operations integration project, eliminating manual invoice and purchase order processing between Simpro field services and Pronto ERP.</p>
     </div>
+
+    <figure class="cs-hero-banner">
+      <img src="Climatech_project_banner_image.png" alt="Climatech ERP and platform transformation project banner" loading="eager" decoding="async">
+    </figure>
 
     <div class="cs-metrics">
       <div class="cs-metric">
         <span class="cs-metric-value" data-value="80" data-suffix="%">80%</span>
-        <span class="cs-metric-label">Reduction in Manual Entry</span>
+        <span class="cs-metric-label">MANUAL PROCESSING ELIMINATED</span>
       </div>
       <div class="cs-metric">
-        <span class="cs-metric-value" data-value="2" data-suffix="hrs">2hrs</span>
-        <span class="cs-metric-label">Daily Admin Saved</span>
+        <span class="cs-metric-value" data-value="3" data-suffix="hrs / day">3hrs / day</span>
+        <span class="cs-metric-label">FINANCE CAPACITY RELEASED</span>
       </div>
       <div class="cs-metric">
-        <span class="cs-metric-value" data-value="99" data-suffix="%">99%</span>
-        <span class="cs-metric-label">Data Accuracy Achieved</span>
+        <span class="cs-metric-value" data-value="99" data-suffix="%+">99%+</span>
+        <span class="cs-metric-label">CROSS-SYSTEM DATA ACCURACY</span>
+      </div>
+      <div class="cs-metric">
+        <span class="cs-metric-value" data-value="30" data-prefix="$" data-suffix="k+">$30k+</span>
+        <span class="cs-metric-label">ANNUALISED CAPACITY VALUE</span>
       </div>
     </div>
 
@@ -161,12 +219,12 @@
     <section class="cs-section">
       <h2 class="cs-section-title">Commercial / Operational Outcome</h2>
       <ul class="cs-list">
-        <li>Eliminated approximately 80% of manual invoice and PO data entry</li>
-        <li>Freed approximately 2 hours of daily finance admin capacity</li>
-        <li>Achieved 99%+ data accuracy between Simpro and Pronto through automated validation</li>
-        <li>Reduced month-end reconciliation time significantly</li>
-        <li>Improved financial reporting accuracy and timeliness</li>
-        <li>Created a scalable integration pattern that could be extended to other Pronto modules</li>
+        <li>Eliminated approximately 80% of manual invoice, purchase order and receipt data entry</li>
+        <li>Released approximately 3 hours per day of finance administrative capacity</li>
+        <li>Achieved 99%+ data accuracy between Simpro and Pronto through automated validation controls</li>
+        <li>Reduced month-end reconciliation cycle time through automated data alignment</li>
+        <li>Improved financial reporting accuracy and timeliness across operations and finance</li>
+        <li>Established a scalable integration framework that can be extended across additional Climatech divisions or future acquisitions</li>
       </ul>
     </section>
 
