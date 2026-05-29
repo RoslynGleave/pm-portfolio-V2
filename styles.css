@@ -236,7 +236,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero-label {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -285,14 +285,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero-sub {
-  font-size: 1.03rem;
+  font-size: 0.875rem;
   line-height: 1.58;
   color: var(--charcoal);
   margin-bottom: 1.55rem;
-  display: inline-block;
-  max-width: 600px;
+  display: block;
+  max-width: 580px;
   background: rgba(255, 255, 255, 0.9);
-  padding: 1.25mm 5mm;
+  padding: 1.25mm 0.62rem;
   border-radius: var(--radius);
 }
 
